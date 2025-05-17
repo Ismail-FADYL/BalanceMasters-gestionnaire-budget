@@ -3,8 +3,10 @@
 2. Gestionnaire de Budget Personnel
 
 Objectif :
-Développer une application permettant à l'utilisateur de suivre ses revenus et dépenses, avec
-des rapports financiers.
+
+  Développer une application permettant à l'utilisateur de suivre ses revenus et dépenses, avec
+  des rapports financiers.
+
 Consignes :
   
   • Créer une interface utilisateur qui permet d'ajouter, de modifier et de supprimer des
