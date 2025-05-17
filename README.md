@@ -30,4 +30,4 @@ Consignes :
   
   • HTML/CSS/JS pour l'interface
   
-  • localStorage ou IndexedDB pour stocker les transactions
+  • localStorage pour stocker les transactions
