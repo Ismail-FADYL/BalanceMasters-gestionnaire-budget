@@ -25,6 +25,7 @@ Consignes :
   
   • Prévoir un historique des transactions dans la base de données locale (par exemple,
   avec localStorage ou IndexedDB).
+ 
   Technologies :
   
   • HTML/CSS/JS pour l'interface
