@@ -11,64 +11,64 @@
     
     <div class="intro-container">
         <div class="money-icon">💰</div>
-        <h1>Gestionnaire de Budget Personnel</h1>
-        <p>Prenez le contrôle de vos finances avec notre outil simple et efficace. Suivez vos revenus et dépenses, visualisez vos tendances et atteignez vos objectifs financiers.</p>
+        <h1>Personal Budget Manager</h1>
+        <p>Take control of your finances with our simple and efficient tool. Track your income and expenses, visualize your trends, and achieve your financial goals.</p>
 
-        <button class="start-btn" id="start-btn">Commencer</button>
+        <button class="start-btn" id="start-btn">Get started</button>
     </div>
 
     <div class="auth-container hidden">
         <!-- Formulaire d'inscription -->
         <div class="form-container active" id="signup-form">
-            <h2>Inscription Obligatoire</h2>
+            <h2>Registration required</h2>
             <form id="registration-form">
                 <div class="form-group">
-                    <p>Nom complet</p>
-                    <input type="text" id="fullname" placeholder="Nom complet" required>
+                    <p>full name</p>
+                    <input type="text" id="fullname" placeholder="full name" required>
                     <div class="error-message" id="fullname-error"></div>
                 </div>
                 <div class="form-group">
-                    <p>Date de naissance</p>
+                    <p>Date of birth</p>
                     <input type="date" id="birthdate" required>
                     <div class="error-message" id="birthdate-error"></div>
                 </div>
                 <div class="form-group">
-                    <p>Le numéro de la carte d'identité</p>
+                    <p>The identity card number</p>
                     <input type="text" id="cin" placeholder="CIN" required>
                     <div class="error-message" id="cin-error"></div>
                 </div>
                 <div class="form-group">
-                    <p>Mot de passe</p>
-                    <input type="password" id="password" placeholder="Mot de passe" required>
+                    <p>password</p>
+                    <input type="password" id="password" placeholder="password" required>
                     <div class="error-message" id="password-error"></div>
                 </div>
                 <div class="form-group">
-                    <p>Confirmation de mot de passe</p>
-                    <input type="password" id="confirm-password" placeholder="Confirmer le mot de passe" required>
+                    <p>Password Confirmation</p>
+                    <input type="password" id="confirm-password" placeholder="Password Confirmation" required>
                     <div class="error-message" id="confirm-password-error"></div>
                 </div>
-                <button type="submit" class="start-btn">S'inscrire</button>
-                <p class="toggle-form">Déjà inscrit? <a href="#" id="show-login">Se connecter</a></p>
+                <button type="submit" class="start-btn">Log in</button>
+                <p class="toggle-form">Already registered? <a href="#" id="show-login">Log in</a></p>
             </form>
         </div>
 
         <!-- Formulaire de connexion -->
         <div class="form-container" id="login-form">
             <h2>Connexion</h2>
-            <div class="success-message" id="registration-success">Inscription réussie ! Veuillez vous connecter</div>
+            <div class="success-message" id="registration-success">Registration successful! Please log in</div>
             <form id="login-form">
                 <div class="form-group">
-                    <p>Entrer le CIN</p>
+                    <p>Enter the CIN</p>
                     <input type="text" id="login-cin" placeholder="CIN" required>
                     <div class="error-message" id="login-cin-error"></div>
                 </div>
                 <div class="form-group">
-                    <p>Entrer le mot de passe</p>
-                    <input type="password" id="login-password" placeholder="Mot de passe" required>
+                    <p>Enter password</p>
+                    <input type="password" id="login-password" placeholder="Password" required>
                     <div class="error-message" id="login-password-error"></div>
                 </div>
-                <button type="submit" class="start-btn">Se connecter</button>
-                <p class="toggle-form">Première visite? <a href="#" id="show-signup">Créer un compte</a></p>
+                <button type="submit" class="start-btn">Log in</button>
+                <p class="toggle-form">First visit? <a href="#" id="show-signup">Create an account</a></p>
             </form>
         </div>
     </div>
