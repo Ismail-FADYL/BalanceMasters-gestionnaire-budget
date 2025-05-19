@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenue - Gestionnaire de Budget</title>
+    <title>Gestionnaire de Budget</title>
     <link rel="stylesheet" href="intro.css">
 </head>
 <body>
@@ -13,7 +13,57 @@
         <div class="money-icon">💰</div>
         <h1>Gestionnaire de Budget Personnel</h1>
         <p>Prenez le contrôle de vos finances avec notre outil simple et efficace. Suivez vos revenus et dépenses, visualisez vos tendances et atteignez vos objectifs financiers.</p>
+
         <button class="start-btn" id="start-btn">Commencer</button>
+    </div>
+
+    <div class="auth-container hidden">
+        <!-- Formulaire d'inscription -->
+        <div class="form-container active" id="signup-form">
+            <h2>Inscription Obligatoire</h2>
+            <form id="registration-form">
+                <div class="form-group">
+                    <input type="text" id="fullname" placeholder="Nom complet" required>
+                    <div class="error-message" id="fullname-error"></div>
+                </div>
+                <div class="form-group">
+                    <input type="date" id="birthdate" required>
+                    <div class="error-message" id="birthdate-error"></div>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="cin" placeholder="CIN" required>
+                    <div class="error-message" id="cin-error"></div>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" placeholder="Mot de passe" required>
+                    <div class="error-message" id="password-error"></div>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="confirm-password" placeholder="Confirmer le mot de passe" required>
+                    <div class="error-message" id="confirm-password-error"></div>
+                </div>
+                <button type="submit" class="start-btn">S'inscrire</button>
+                <p class="toggle-form">Déjà inscrit? <a href="#" id="show-login">Se connecter</a></p>
+            </form>
+        </div>
+
+        <!-- Formulaire de connexion -->
+        <div class="form-container" id="login-form">
+            <h2>Connexion</h2>
+            <div class="success-message" id="registration-success">Inscription réussie ! Veuillez vous connecter</div>
+            <form id="login-form">
+                <div class="form-group">
+                    <input type="text" id="login-cin" placeholder="CIN" required>
+                    <div class="error-message" id="login-cin-error"></div>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="login-password" placeholder="Mot de passe" required>
+                    <div class="error-message" id="login-password-error"></div>
+                </div>
+                <button type="submit" class="start-btn">Se connecter</button>
+                <p class="toggle-form">Première visite? <a href="#" id="show-signup">Créer un compte</a></p>
+            </form>
+        </div>
     </div>
 
     <script src="intro.js"></script>

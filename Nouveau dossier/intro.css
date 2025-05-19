@@ -1,109 +1,180 @@
+/* Styles de base */
 body {
-         margin: 0;
-         padding: 0;
-         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-         background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
-         height: 100vh;
-         display: flex;
-         justify-content: center;
-         align-items: center;
-         overflow: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 .intro-container {
-         text-align: center;
-         opacity: 0;
-         transform: translateY(20px);
-         animation: fadeIn 1.5s forwards 0.5s;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1.5s forwards 0.5s;
 }
 
 h1 {
-         color: #3778c2;
-         font-size: 3rem;
-         margin-bottom: 20px;
-         text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    color: #3778c2;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
 p {
-         color: #333;
-         font-size: 1.2rem;
-         max-width: 600px;
-         margin: 0 auto 30px;
-         line-height: 1.6;
+    color: #333;
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
 }
 
 .start-btn {
-         background-color: #3778c2;
-         color: white;
-         border: none;
-         padding: 15px 30px;
-         font-size: 1.2rem;
-         border-radius: 50px;
-         cursor: pointer;
-         transition: all 0.3s ease;
-         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-         transform: scale(0.95);
-         animation: pulse 2s infinite;
+    background-color: #3778c2;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transform: scale(0.95);
 }
 
 .start-btn:hover {
-         background-color: #274e8a;
-         transform: scale(1);
-         animation: none;
+    background-color: #274e8a;
+    transform: scale(1);
 }
 
 .money-icon {
-         font-size: 4rem;
-         margin-bottom: 20px;
-         display: inline-block;
-         animation: bounce 2s infinite;
+    font-size: 4rem;
+    margin-bottom: 20px;
+    display: inline-block;
+    animation: bounce 2s infinite;
 }
 
+/* Animations */
 @keyframes fadeIn {
-         to {
-         opacity: 1;
-         transform: translateY(0);
-         }
-}
-
-@keyframes pulse {
-         0% { transform: scale(0.95); }
-         50% { transform: scale(1.05); }
-         100% { transform: scale(0.95); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes bounce {
-         0%, 100% { transform: translateY(0); }
-         50% { transform: translateY(-20px); }
-}
-
-.flying-coins {
-         position: absolute;
-         width: 100%;
-         height: 100%;
-         pointer-events: none;
-}
-
-.coin {
-         position: absolute;
-         font-size: 1.5rem;
-         opacity: 0;
-         animation: fly linear infinite;
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
 }
 
 @keyframes fly {
-         0% {
-         transform: translateY(100vh) rotate(0deg);
-         opacity: 0;
-         }
-         10% {
-         opacity: 1;
-         }
-         90% {
-         opacity: 1;
-         }
-         100% {
-         transform: translateY(-100px) rotate(360deg);
-         opacity: 0;
-         }
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+}
+
+/* Éléments de formulaire */
+.auth-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 500px;
+    z-index: 1000;
+}
+
+.form-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.2);
+    width: 90%;
+    max-width: 400px;
+    display: none;
+    z-index: 1000;
+}
+
+.form-container.active {
+    display: block;
+    animation: formSlide 0.5s ease-out;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #c2e9fb;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(0.5);
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+    display: none;
+}
+
+.success-message {
+    color: #2ecc71;
+    background: #e8f5e9;
+    padding: 1rem;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+    display: none;
+    text-align: center;
+}
+
+.toggle-form {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.toggle-form a {
+    color: #3778c2;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.toggle-form a:hover {
+    text-decoration: underline;
+}
+
+.hidden {
+    display: none;
+    opacity: 0;
+}
+
+@keyframes formSlide {
+    from { transform: translate(-50%, -40%); opacity: 0; }
+    to { transform: translate(-50%, -50%); opacity: 1; }
+}
+
+/* Pièces volantes */
+.flying-coins {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.coin {
+    position: absolute;
+    font-size: 1.5rem;
+    opacity: 0;
+    animation: fly linear infinite;
 }
