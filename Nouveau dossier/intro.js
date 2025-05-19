@@ -23,21 +23,30 @@ document.addEventListener('DOMContentLoaded', () => {
     createCoins();
 
     const authContainer = document.querySelector('.auth-container');
+    const introContainer = document.querySelector('.intro-container');
     const signupForm = document.getElementById('signup-form');
     const loginForm = document.getElementById('login-form');
     const startBtn = document.getElementById('start-btn');
     const successMessage = document.getElementById('registration-success');
-
     const users = JSON.parse(localStorage.getItem('users')) || {};
 
     // Gestion de l'historique
-    window.history.pushState(null, document.title, window.location.href);
-    window.addEventListener('popstate', function(e) {
-        window.history.pushState(null, document.title, window.location.href);
+    window.history.replaceState({ page: 'intro' }, document.title);
+
+    window.addEventListener('popstate', (e) => {
+        if (e.state?.page === 'intro') {
+            authContainer.classList.add('hidden');
+            introContainer.style.display = 'block';
+            introContainer.style.animation = 'fadeIn 0.5s forwards';
+        } else if (e.state?.page === 'auth') {
+            authContainer.classList.remove('hidden');
+            introContainer.style.display = 'none';
+        }
     });
 
     startBtn.addEventListener('click', () => {
-        document.querySelector('.intro-container').style.animation = 'fadeOut 0.5s forwards';
+        window.history.pushState({ page: 'auth' }, document.title);
+        introContainer.style.animation = 'fadeOut 0.5s forwards';
         
         setTimeout(() => {
             authContainer.classList.remove('hidden');
@@ -68,12 +77,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function showLoginForm() {
+        window.history.replaceState({ page: 'auth', form: 'login' }, document.title);
         signupForm.classList.remove('active');
         loginForm.classList.add('active');
         successMessage.style.display = 'none';
     }
 
     function showSignupForm() {
+        window.history.replaceState({ page: 'auth', form: 'signup' }, document.title);
         loginForm.classList.remove('active');
         signupForm.classList.add('active');
         successMessage.style.display = 'none';
@@ -162,7 +173,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function completeLogin(cin) {
         localStorage.setItem('currentUser', cin);
-        window.location.replace('HTML_Code.html'); // Correction ici
+        window.history.replaceState({}, document.title);
+        window.location.href = 'HTML_Code.html';
     }
 
     function calculateAge(birthDate) {

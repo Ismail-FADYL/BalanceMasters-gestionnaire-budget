@@ -34,11 +34,11 @@ p {
 }
 
 .start-btn {
-    background-color: #3778c2;
+    background-color: #4285d0;
     color: white;
     border: none;
-    padding: 15px 30px;
-    font-size: 1.2rem;
+    padding: 15px 25px;
+    font-size: 1rem;
     border-radius: 50px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -56,6 +56,15 @@ p {
     margin-bottom: 20px;
     display: inline-block;
     animation: bounce 2s infinite;
+}
+/* Ajouter cette règle */
+#registration-form .start-btn,
+#login-form .start-btn {
+    margin-top: 1.5rem;
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* Animations */
@@ -84,38 +93,45 @@ p {
     width: 90%;
     max-width: 500px;
     z-index: 1000;
+    display: flex; /* Nouveau */
+    justify-content: center; /* Nouveau */
+    align-items: center; /* Nouveau */
 }
 
 .form-container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     background: white;
-    padding: 2rem;
+    padding: 1.5rem;
     border-radius: 15px;
     box-shadow: 0 0 30px rgba(0,0,0,0.2);
     width: 90%;
     max-width: 400px;
     display: none;
     z-index: 1000;
+    margin: auto;
 }
 
 .form-container.active {
     display: block;
     animation: formSlide 0.5s ease-out;
 }
-
-.form-group {
-    margin-bottom: 1.5rem;
+.form-group p {
+    margin: 0 0 0.3rem 0;
+    font-size: 0.9rem;
+    color: #4a4a4a;
+    font-weight: 500;
+    width: 100%;
+    max-width: 350px; /* Largeur cohérente avec les inputs */
+    text-align: left; /* Alignement texte à gauche */
 }
 
 .form-group input {
     width: 100%;
-    padding: 0.8rem;
+    max-width: 375px; /* Largeur fixe pour les inputs */
+    padding: 0.7rem;
     border: 2px solid #c2e9fb;
     border-radius: 8px;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    margin: 0 auto; /* Centrage horizontal */
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
@@ -159,11 +175,17 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     opacity: 0;
 }
 
+/* Remplacer l'animation formSlide par */
 @keyframes formSlide {
-    from { transform: translate(-50%, -40%); opacity: 0; }
-    to { transform: translate(-50%, -50%); opacity: 1; }
+    from { 
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
-
 /* Pièces volantes */
 .flying-coins {
     position: absolute;
@@ -177,4 +199,37 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     font-size: 1.5rem;
     opacity: 0;
     animation: fly linear infinite;
+}
+
+/* Adaptation mobile */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .form-container {
+        padding: 1rem;
+    }
+
+    .form-group input {
+        padding: 0.6rem;
+    }
+    .start-btn {
+        padding: 8px 16px; /* Plus compact sur mobile */
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-height: 700px) {
+    .form-container {
+        padding: 1rem;
+    }
+    
+    .form-group {
+        margin-bottom: 0.8rem;
+    }
+    
+    .form-group input {
+        padding: 0.6rem;
+    }
 }
