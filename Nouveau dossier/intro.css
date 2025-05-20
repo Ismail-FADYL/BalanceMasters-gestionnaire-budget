@@ -69,24 +69,6 @@ p {
     line-height: 1.6;
 }
 
-.start-btn {
-    background-color: #4285d0;
-    color: white;
-    border: none;
-    padding: 15px 25px;
-    font-size: 1rem;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transform: scale(0.95);
-}
-
-.start-btn:hover {
-    background-color: #274e8a;
-    transform: scale(1);
-}
-
 .money-icon {
     font-size: 4rem;
     margin-bottom: 20px;
@@ -321,7 +303,24 @@ h2 {
 .start-btn:hover {
   background-color: var(--primary-dark);
   transform: translateY(-1px);
-  
+}
+
+.start-btn::before {
+  content: "";
+  position: absolute;
+  top: -130%;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(120deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 100%);
+  transform: translateX(-100%) rotate(25deg);
+  transition: transform 0.6s ease-in-out;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.start-btn:hover::before {
+  transform: translateX(100%) rotate(25deg);
 }
 
 #guest-btn {
@@ -334,4 +333,16 @@ h2 {
 #guest-btn:hover {
   background-color: #f0f4ff;
 }
+
+/* Ajoute cette animation à ton CSS */
+@keyframes borderMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+
 
