@@ -1,4 +1,22 @@
 /* Styles de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+}
+/* ===== BASE STYLES ===== */
+:root {
+  --primary: #4361ee;
+  --primary-dark: #3a56d4;
+  --secondary: #f8f9fa;
+  --text: #2b2d42;
+  --text-light: #8d99ae;
+  --error: #ef233c;
+  --success: #2ec4b6;
+  --border: #e9ecef;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
 body {
     margin: 0;
     padding: 0;
@@ -14,12 +32,13 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-    height: 100vh;
     width: 100vw;
     position: fixed;
     top: 0;
     left: 0;
     z-index: -1;
+    color: var(--text);
+    line-height: 1.6;
 }
 
 .intro-container {
@@ -74,12 +93,12 @@ p {
     display: inline-block;
     animation: bounce 2s infinite;
 }
-/* Ajouter cette règle */
+
 #registration-form .start-btn,
 #login-form .start-btn {
     margin-top: 1.5rem;
     display: block;
-    width: fit-content;
+    width: 100%; 
     margin-left: auto;
     margin-right: auto;
 }
@@ -111,12 +130,12 @@ p {
     max-width: 500px;
     z-index: 1000;
     display: flex; /* Nouveau */
-    justify-content: center; /* Nouveau */
-    align-items: center; /* Nouveau */
-}
+   justify-content: center; /* Nouveau */
+   align-items: center; /* Nouveau */
+} 
 
 .form-container {
-    background: white;
+    background: rgba(255, 255, 255, 0.192);
     padding: 1.5rem;
     border-radius: 15px;
     box-shadow: 0 0 30px rgba(0,0,0,0.2);
@@ -149,6 +168,7 @@ p {
     border-radius: 8px;
     font-size: 0.9rem;
     margin: 0 auto; /* Centrage horizontal */
+    outline-color: #3778c2;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
@@ -250,3 +270,68 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         padding: 0.6rem;
     }
 }
+
+
+.auth-container.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  height: 0;
+  overflow: hidden;
+}
+
+/* ===== FORM CONTAINERS ===== */
+.form-container {
+  padding: 2.5rem;
+  display: none;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.form-container.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h2 {
+  font-size: 1.75rem;
+  margin-bottom: 1.75rem;
+  text-align: center;
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* ===== BUTTONS ===== */
+.start-btn {
+  width: 100%;
+  padding: 0.875rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.start-btn:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+  
+}
+
+#guest-btn {
+  background-color: white;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  margin-top: 1rem;
+}
+
+#guest-btn:hover {
+  background-color: #f0f4ff;
+}
+
