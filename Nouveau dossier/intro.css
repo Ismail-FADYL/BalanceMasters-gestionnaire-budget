@@ -9,6 +9,17 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    background-image: url('bgc.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
 .intro-container {
@@ -17,7 +28,13 @@ body {
     transform: translateY(20px);
     animation: fadeIn 1.5s forwards 0.5s;
 }
-
+.intro-container p {
+    font-size: 20px;
+    font-weight: bold;
+}
+.guest-btn {
+    background-color: #6c757d; /* gray */
+}
 h1 {
     color: #3778c2;
     font-size: 3rem;

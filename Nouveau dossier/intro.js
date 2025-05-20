@@ -217,4 +217,8 @@ document.addEventListener('DOMContentLoaded', () => {
             password: document.getElementById('login-password').value
         };
     }
+        document.getElementById("guest-btn").addEventListener("click", function () {
+    // Redirect to main application without login
+    window.location.href = "HTML_Code.html"; // Adjust the file name if needed
+    })
 });
