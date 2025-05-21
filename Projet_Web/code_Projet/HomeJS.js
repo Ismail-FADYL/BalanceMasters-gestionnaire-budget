@@ -141,26 +141,53 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const dates = Object.keys(transactionsParDate).sort((a, b) => new Date(a) - new Date(b));
 
-        const config = {
-            type: 'line',
-            data: {
-                labels: dates,
-                datasets: [{
-                    label: 'Revenus',
-                    data: dates.map(date => transactionsParDate[date].revenus),
-                    borderColor: '#4BC0C0',
-                    tension: 0.4,
-                    yAxisID: 'y'
-                }, {
-                    label: 'Dépenses',
-                    data: dates.map(date => transactionsParDate[date].depenses),
-                    borderColor: '#FF6384',
-                    tension: 0.4,
-                    yAxisID: 'y1'
-                }]
+        // ...dans mettreAJourGraphique()
+const config = {
+    type: 'line',
+    data: {
+        labels: dates,
+        datasets: [
+            {
+                label: 'Revenus',
+                data: dates.map(date => transactionsParDate[date].revenus),
+                borderColor: '#4BC0C0',
+                tension: 0.4,
+                yAxisID: 'y'
             },
-            options: { /* ... */ }
-        };
+            {
+                label: 'Dépenses',
+                data: dates.map(date => transactionsParDate[date].depenses),
+                borderColor: '#FF6384',
+                tension: 0.4,
+                yAxisID: 'y1'
+            }
+        ]
+    },
+    options: {
+        responsive: true,
+        interaction: { mode: 'index', intersect: false },
+        stacked: false,
+        plugins: {
+            legend: { position: 'top' },
+            title: { display: true, text: 'Tendances financières' }
+        },
+        scales: {
+            y: {
+                type: 'linear',
+                display: true,
+                position: 'left',
+                title: { display: true, text: 'Revenus' }
+            },
+            y1: {
+                type: 'linear',
+                display: true,
+                position: 'right',
+                grid: { drawOnChartArea: false },
+                title: { display: true, text: 'Dépenses' }
+            }
+        }
+    }
+};
 
         myChart = new Chart(chartCtx, config);
     }
