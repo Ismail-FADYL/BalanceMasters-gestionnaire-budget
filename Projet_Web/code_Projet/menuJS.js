@@ -261,7 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function finaliserConnexion(cin) {
         localStorage.setItem('currentUser', cin);
         window.history.replaceState({}, document.title);
-        window.location.href = 'Home.html';
+        window.location.href = 'code_Projet/Home_code/Home.html';
     }
 
     /**
@@ -341,6 +341,6 @@ document.addEventListener('DOMContentLoaded', () => {
      * @listens click - Événement déclenché par le bouton 'guest-btn'.
      */
     document.getElementById("guest-btn").addEventListener("click", function () {
-        window.location.href = "Home.html";
+        window.location.href = "code_Projet/Home_code/Home.html";
     });
 });
