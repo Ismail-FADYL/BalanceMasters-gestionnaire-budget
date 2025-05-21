@@ -1,59 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>JSDoc: Source: Script.js</title>
-
-    <script src="scripts/prettify/prettify.js"> </script>
-    <script src="scripts/prettify/lang-css.js"> </script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
-</head>
-
-<body>
-
-<div id="main">
-
-    <h1 class="page-title">Source: Script.js</h1>
-
-    
-
-
-
-    
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     // Références aux éléments DOM
     const typeInput = document.getElementById('type');
-
     const montantInput = document.getElementById('montant');
-
     const dateInput = document.getElementById('date');
-
     const ajouterTransactionBtn = document.getElementById('ajouterTransaction');
-
     const messageDiv = document.getElementById('message');
-
     const soldeSpan = document.getElementById('solde');
-
     const transactionsList = document.getElementById('transactions-list');
-
     const monthlyRevenuesSpan = document.getElementById('monthly-revenues');
-
     const monthlyExpensesSpan = document.getElementById('monthly-expenses');
-
     const chartCanvas = document.getElementById('myChart');
-
     const chartCtx = chartCanvas.getContext('2d');
-
     const navLinks = document.querySelectorAll('.nav-link');
-
     const contentSections = document.querySelectorAll('.main-content > div.card');
-
     const inputSection = document.querySelector('.input-section');
 
     // État de l'application
@@ -98,7 +57,7 @@
 
         const mensuel = transactions.reduce((acc, t) => {
             const date = new Date(t.date);
-            if (date.getMonth() === moisCourant &amp;&amp; date.getFullYear() === anneeCourante) {
+            if (date.getMonth() === moisCourant && date.getFullYear() === anneeCourante) {
                 t.type === 'revenu'
                     ? acc.revenus += parseFloat(t.montant)
                     : acc.depenses += parseFloat(t.montant);
@@ -121,19 +80,19 @@
             li.className = t.type === 'depense' ? 'depense' : 'revenu';
             if(index === editingIndex) li.classList.add('editing');
             li.innerHTML = `
-                &lt;div class="transaction-info">
-                    &lt;span>${t.type.charAt(0).toUpperCase() + t.type.slice(1)}&lt;/span>
-                    &lt;span>${parseFloat(t.montant).toFixed(2)} DH&lt;/span>
-                    &lt;span>${new Date(t.date).toLocaleDateString('fr-FR')}&lt;/span>
-                &lt;/div>
-                &lt;div class="transaction-actions">
-                    &lt;button class="btn-action btn-edit" data-index="${index}">
-                        &lt;i class="fas fa-edit">&lt;/i>
-                    &lt;/button>
-                    &lt;button class="btn-action btn-delete" data-index="${index}">
-                        &lt;i class="fas fa-trash-alt">&lt;/i>
-                    &lt;/button>
-                &lt;/div>
+                <div class="transaction-info">
+                    <span>${t.type.charAt(0).toUpperCase() + t.type.slice(1)}</span>
+                    <span>${parseFloat(t.montant).toFixed(2)} DH</span>
+                    <span>${new Date(t.date).toLocaleDateString('fr-FR')}</span>
+                </div>
+                <div class="transaction-actions">
+                    <button class="btn-action btn-edit" data-index="${index}">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="btn-action btn-delete" data-index="${index}">
+                        <i class="fas fa-trash-alt"></i>
+                    </button>
+                </div>
             `;
             transactionsList.appendChild(li);
         });
@@ -225,7 +184,7 @@
         const montant = parseFloat(montantInput.value);
         const date = dateInput.value;
 
-        if (!type || isNaN(montant) || montant &lt;= 0 || !date) {
+        if (!type || isNaN(montant) || montant <= 0 || !date) {
             afficherFeedback('Veuillez remplir tous les champs', 'danger');
             return;
         }
@@ -267,26 +226,28 @@
 
     const activeSection = localStorage.getItem('activeSection') || 'overview';
     document.querySelector(`[data-section="${activeSection}"]`).click();
-});</code></pre>
-        </article>
-    </section>
+});
 
+//  Gestion du mode sombre (dark mode) 
+document.getElementById('theme-toggle-btn').addEventListener('click', function() {
+    const body = document.body;
+    if (body.getAttribute('data-theme') === 'dark') {
+        body.removeAttribute('data-theme');
+        this.textContent = '🌙 Mode sombre';
+    } else {
+        body.setAttribute('data-theme', 'dark');
+        this.textContent = '☀️ Mode clair';
+    }
+});
 
-
-
-</div>
-
-<nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#afficherFeedback">afficherFeedback</a></li><li><a href="global.html#afficherTransactions">afficherTransactions</a></li><li><a href="global.html#mettreAJourGraphique">mettreAJourGraphique</a></li><li><a href="global.html#mettreAJourReacapitulatifMensuel">mettreAJourReacapitulatifMensuel</a></li><li><a href="global.html#mettreAJourSolde">mettreAJourSolde</a></li><li><a href="global.html#mettreAJourTout">mettreAJourTout</a></li></ul>
-</nav>
-
-<br class="clear">
-
-<footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Wed May 21 2025 01:20:47 GMT+0100 (UTC+01:00)
-</footer>
-
-<script> prettyPrint(); </script>
-<script src="scripts/linenumber.js"> </script>
-</body>
-</html>
+//  Masquer le bouton dark mode lors du scroll 
+const themeBtn = document.getElementById('theme-toggle-btn');
+window.addEventListener('scroll', function() {
+    if (window.scrollY > 10) {
+        themeBtn.style.opacity = '0';
+        themeBtn.style.pointerEvents = 'none';
+    } else {
+        themeBtn.style.opacity = '1';
+        themeBtn.style.pointerEvents = 'auto';
+    }
+});

@@ -7,22 +7,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="HomeCSS.css">
     
 </head>
 <body>
     <aside class="sidebar">
-        <div class="logo">
+        <div class="logo">   <!-- Logo avec icône porte-monnaie -->
             <i class="fas fa-wallet"></i>
             <span>Budget App</span>
         </div>
+        <!-- Menu de navigation -->
         <ul class="nav-menu">
+             <!-- Chaque item utilise :
+                - data-section pour le ciblage JS
+                - Classes pour le style actif/inactif -->
             <li class="nav-item">
                 <a href="#" class="nav-link active" data-section="overview">
                     <i class="fas fa-tachometer-alt"></i>
                     <span>Home</span>
                 </a>
             </li>
+            <!-- Items répétés pour chart/monthly/transactions -->
             <li class="nav-item">
                 <a href="#" class="nav-link" data-section="chart">
                     <i class="fas fa-chart-line"></i>
@@ -45,10 +50,12 @@
     </aside>
 
     <main class="main-content">
+        <!-- Titre principal -->
         <h1 class="page-title">Gestionnaire de Budget</h1>
-
+        <!-- Section de saisie -->
         <div class="input-section card">
             <h2 class="card-title">Ajouter une Transaction</h2>
+            <!-- Groupe de sélection Revenu/Dépense -->
             <div class="form-group">
                 <label for="type">Catégorie :</label>
                 <select id="type" class="form-control">
@@ -56,39 +63,45 @@
                     <option value="depense">Dépense</option>
                 </select>
             </div>
+            <!-- Champ numérique avec contraintes -->
             <div class="form-group">
                 <label for="montant">Montant :</label>
                 <input type="number" id="montant" class="form-control" placeholder="0.00" step="0.01" min="0">
             </div>
+            <!-- Sélecteur de date natif -->
             <div class="form-group">
                 <label for="date">Date :</label>
                 <input type="date" id="date" class="form-control">
             </div>
+             <!-- Bouton d'action principal -->
             <button id="ajouterTransaction" class="btn">Ajouter</button>
+            <!-- Zone de feedback utilisateur -->
             <p id="message"></p>
         </div>
-
+          <!-- Aperçu en temps réel -->
         <div id="overview" class="overview-section card">
             <h2 class="card-title">Aperçu</h2>
             <p>Solde actuel : <span id="solde">0.00 DH</span></p>
         </div>
-
+        <!-- Graphique interactif (masqué par défaut) -->
         <div id="chart" class="chart-container card hidden">
             <h2 class="card-title">Évolution Financière</h2>
             <canvas id="myChart"></canvas>
         </div>
-
+        <!-- Statistiques mensuelles -->
         <div id="monthly" class="monthly-section card hidden">
             <h2 class="card-title">Récapitulatif Mensuel</h2>
             <p>Total Revenus (ce mois) : <span id="monthly-revenues">0.00</span> DH</p>
             <p>Total Dépenses (ce mois) : <span id="monthly-expenses">0.00</span> DH</p>
         </div>
-
+        <!-- Liste dynamique des transactions -->
         <div id="transactions" class="transactions-section card hidden">
             <h2 class="card-title">Historique des Transactions</h2>
             <ul id="transactions-list"></ul>
         </div>
     </main>
-     <script src="Script.js"></script>
+    <button class="theme-toggle" id="theme-toggle-btn">🌙 Mode sombre</button>
+    <!-- Chargement des scripts -->
+     <script src="HomeJS.js"></script>
 </body>
 </html>

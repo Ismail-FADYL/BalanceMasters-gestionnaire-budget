@@ -1,44 +1,48 @@
 /* === CSS Custom Properties === */
+/* Définition des variables globales pour les couleurs, espacements, polices, etc. */
 :root {
-    --primary: #5e60ce;
-    --primary-dark: #4b4da6;
-    --secondary: #4a4e69;
-    --success: #48cae4;
-    --danger: #ff006e;
-    --light: #f9f7f3;
-    --dark: #2d2d2d;
-    --background: #f5f7fa;
-    --background-dark: #1a1a2e;
-    --text-dark: #ffffff;
-    --border-radius: 12px;
-    --border-radius-sm: 8px;
-    --shadow: 0 6px 24px rgba(0, 0, 0, 0.1);
-    --shadow-dark: 0 6px 24px rgba(0, 0, 0, 0.3);
-    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --font-family: 'Poppins', sans-serif;
-    --font-size-base: 1rem;
-    --font-size-large: 1.3rem;
-    --font-size-xl: 2rem;
-    --spacing-xs: 0.25rem;
-    --spacing-sm: 0.5rem;
-    --spacing-md: 1rem;
-    --spacing-lg: 2rem;
-    --gradient: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    --primary: #5e60ce;              /* Couleur principale utilisée pour les éléments clés */
+    --primary-dark: #4b4da6;         /* Variante plus foncée de la couleur principale */
+    --secondary: #4a4e69;            /* Couleur secondaire */
+    --success: #48cae4;              /* Couleur pour les messages de succès */
+    --danger: #ff006e;               /* Couleur pour les messages d'erreur */
+    --light: #f9f7f3;                /* Couleur de fond claire */
+    --dark: #2d2d2d;                 /* Couleur de texte sombre */
+    --background: #f5f7fa;           /* Couleur de fond principale */
+    --background-dark: #1a1a2e;      /* Couleur de fond pour le mode sombre */
+    --text-dark: #ffffff;            /* Couleur de texte claire (pour mode sombre) */
+    --border-radius: 12px;           /* Rayon de bordure standard */
+    --border-radius-sm: 8px;         /* Rayon de bordure réduit */
+    --shadow: 0 6px 24px rgba(0, 0, 0, 0.1);      /* Ombre standard */
+    --shadow-dark: 0 6px 24px rgba(0, 0, 0, 0.3); /* Ombre pour mode sombre */
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Animation de transition fluide */
+    --font-family: 'Poppins', sans-serif;          /* Police principale */
+    --font-size-base: 1rem;                        /* Taille de police de base */
+    --font-size-large: 1.3rem;                     /* Grande taille de police */
+    --font-size-xl: 2rem;                          /* Très grande taille de police */
+    --spacing-xs: 0.25rem;                         /* Espacement extra-petit */
+    --spacing-sm: 0.5rem;                          /* Espacement petit */
+    --spacing-md: 1rem;                            /* Espacement moyen */
+    --spacing-lg: 2rem;                            /* Espacement large */
+    --gradient: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); /* Dégradé principal */
 }
 
 /* === Dark Mode === */
+/* Définit certaines variables pour le mode sombre */
 [data-theme="dark"] {
-    --background: var(--background-dark);
-    --light: #2a2a3e;
-    --dark: var(--text-dark);
-    --shadow: var(--shadow-dark);
+    --background: var(--background-dark);  /* Fond sombre */
+    --light: #2a2a3e;                      /* Fond clair adapté au sombre */
+    --dark: var(--text-dark);              /* Texte clair */
+    --shadow: var(--shadow-dark);          /* Ombre plus marquée */
 }
 
+/* Applique le fond clair adapté au mode sombre pour la sidebar et les cartes */
 [data-theme="dark"] .sidebar,
 [data-theme="dark"] .card {
     background: var(--light);
 }
 
+/* Style des champs de formulaire en mode sombre */
 [data-theme="dark"] .input-section select,
 [data-theme="dark"] .input-section input {
     background: var(--background-dark);
@@ -46,6 +50,7 @@
     border-color: #444;
 }
 
+/* Effet focus pour les champs en mode sombre */
 [data-theme="dark"] .input-section select:focus,
 [data-theme="dark"] .input-section input:focus {
     border-color: var(--primary);
@@ -53,6 +58,7 @@
 }
 
 /* === Global Reset and Base Styles === */
+/* Réinitialisation des marges, paddings et box-sizing pour tous les éléments */
 * {
     margin: 0;
     padding: 0;
@@ -60,6 +66,7 @@
     font-family: var(--font-family);
 }
 
+/* Style de base du body : flex, couleur de fond, couleur du texte, etc. */
 body {
     display: flex;
     background: var(--background);
@@ -69,6 +76,7 @@ body {
 }
 
 /* === Theme Toggle === */
+/* Bouton pour changer le thème clair/sombre */
 .theme-toggle {
     position: fixed;
     top: var(--spacing-md);
@@ -93,6 +101,7 @@ body {
 }
 
 /* === Sidebar Styles === */
+/* Barre latérale de navigation */
 .sidebar {
     width: 260px;
     background: white;
@@ -105,13 +114,14 @@ body {
     transition: var(--transition);
 }
 
+/* Logo de la sidebar */
 .logo {
     display: flex;
     align-items: center;
     gap: 0.75rem;
     font-size: 1.6rem;
     font-weight: 600;
-    color: var(--primary); /* Fallback for unsupported browsers */
+    color: var(--primary); /* Fallback pour les navigateurs non compatibles */
     margin-bottom: 2.5rem;
 }
 
@@ -119,17 +129,19 @@ body {
     font-size: 2rem;
     background: var(--gradient);
     -webkit-background-clip: text;
-    background-clip: text; /* Standard property for compatibility */
+    background-clip: text; /* Compatibilité standard */
     -webkit-text-fill-color: transparent;
-    color: var(--primary); /* Fallback for unsupported browsers */
+    color: var(--primary); /* Fallback */
     animation: pulse 2s infinite;
 }
 
+/* Animation du logo */
 @keyframes pulse {
     0%, 100% { transform: scale(1); }
     50% { transform: scale(1.2); }
 }
 
+/* Menu de navigation */
 .nav-menu {
     list-style: none;
 }
@@ -181,6 +193,7 @@ body {
 }
 
 /* === Main Content Styles === */
+/* Contenu principal de la page */
 .main-content {
     flex: 1;
     margin-left: 260px;
@@ -189,19 +202,21 @@ body {
     gap: var(--spacing-lg);
 }
 
+/* Titre de page stylisé avec un dégradé */
 .page-title {
     font-size: var(--font-size-xl);
     font-weight: 700;
-    color: var(--primary); /* Fallback for unsupported browsers */
+    color: var(--primary); /* Fallback */
     margin-bottom: var(--spacing-lg);
     text-align: center;
     background: var(--gradient);
     -webkit-background-clip: text;
-    background-clip: text; /* Standard property for compatibility */
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 /* === Card Component === */
+/* Cartes pour afficher des informations */
 .card {
     background: white;
     border-radius: var(--border-radius);
@@ -236,6 +251,7 @@ body {
 }
 
 /* === Input Section Styles === */
+/* Section pour les formulaires */
 .input-section {
     display: grid;
     gap: var(--spacing-md);
@@ -286,6 +302,7 @@ body {
     transform: scale(1.05);
 }
 
+/* Message de feedback pour l'utilisateur */
 #message {
     margin-top: var(--spacing-md);
     font-size: 0.9rem;
@@ -309,12 +326,14 @@ body {
     border: 1px solid var(--danger);
 }
 
+/* Animation d'apparition du message */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
 /* === Overview Section === */
+/* Section de résumé des informations */
 .overview-section {
     display: grid;
     gap: var(--spacing-sm);
@@ -327,15 +346,16 @@ body {
 
 .overview-section span {
     font-weight: 600;
-    color: var(--primary); /* Fallback for unsupported browsers */
+    color: var(--primary);
     font-size: 1.2rem;
     background: var(--gradient);
     -webkit-background-clip: text;
-    background-clip: text; /* Standard property for compatibility */
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 /* === Chart Section === */
+/* Conteneur pour les graphiques */
 .chart-container {
     width: 100%;
     position: relative;
@@ -354,6 +374,7 @@ body {
 }
 
 /* === Monthly Section === */
+/* Section pour les informations mensuelles */
 .monthly-section {
     display: grid;
     gap: var(--spacing-sm);
@@ -370,6 +391,7 @@ body {
 }
 
 /* === Transactions Section === */
+/* Liste des transactions */
 .transactions-section ul {
     list-style: none;
     display: grid;
@@ -393,6 +415,7 @@ body {
     background: rgba(94, 96, 206, 0.1);
 }
 
+/* Actions sur les transactions (éditer, supprimer) */
 .transaction-actions {
     display: flex;
     gap: var(--spacing-sm);
@@ -429,10 +452,12 @@ body {
 }
 
 /* === Utility Classes === */
+/* Classe pour masquer un élément */
 .hidden {
     display: none !important;
 }
 
+/* Mode édition pour une transaction */
 .edit-mode {
     border-left: 4px solid var(--success);
     animation: pulseBorder 1.5s infinite;
@@ -444,6 +469,7 @@ body {
 }
 
 /* === Accessibility Enhancements === */
+/* Améliore la visibilité du focus clavier */
 :focus {
     outline: 3px solid var(--primary);
     outline-offset: 2px;
@@ -456,6 +482,7 @@ a:focus {
 }
 
 /* === Responsive Design === */
+/* Adaptation du design pour tablettes */
 @media (max-width: 768px) {
     .sidebar {
         width: 80px;
@@ -495,6 +522,7 @@ a:focus {
     }
 }
 
+/* Adaptation du design pour mobiles */
 @media (max-width: 480px) {
     .sidebar {
         width: 60px;
