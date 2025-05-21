@@ -128,6 +128,34 @@ document.addEventListener('DOMContentLoaded', function() {
     function mettreAJourGraphique() {
         if (myChart) myChart.destroy();
 
+        if (transactions.length === 0) {
+        // Affiche un graphique vide avec axes
+        myChart = new Chart(chartCtx, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [
+                    {
+                        label: 'Aucune donnée',
+                        data: [],
+                        borderColor: '#ccc'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false },
+                    title: { display: true, text: 'Aucune donnée à afficher', color : '#000' }
+                },
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+        return;
+    }
+
         const transactionsParDate = transactions.reduce((acc, t) => {
             const date = new Date(t.date).toISOString().split('T')[0];
             if (!acc[date]) acc[date] = { revenus: 0, depenses: 0 };
@@ -141,56 +169,55 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const dates = Object.keys(transactionsParDate).sort((a, b) => new Date(a) - new Date(b));
 
-        // ...dans mettreAJourGraphique()
-const config = {
-    type: 'line',
-    data: {
-        labels: dates,
-        datasets: [
-            {
-                label: 'Revenus',
-                data: dates.map(date => transactionsParDate[date].revenus),
-                borderColor: '#4BC0C0',
-                tension: 0.4,
-                yAxisID: 'y'
+        const config = {
+            type: 'line',
+            data: {
+                labels: dates,
+                datasets: [
+                    {
+                        label: 'Revenus',
+                        data: dates.map(date => transactionsParDate[date].revenus),
+                        borderColor: '#4BC0C0',
+                        tension: 0.4,
+                        yAxisID: 'y'
+                    },
+                    {
+                        label: 'Dépenses',
+                        data: dates.map(date => transactionsParDate[date].depenses),
+                        borderColor: '#FF6384',
+                        tension: 0.4,
+                        yAxisID: 'y1'
+                    }
+                ]
             },
-            {
-                label: 'Dépenses',
-                data: dates.map(date => transactionsParDate[date].depenses),
-                borderColor: '#FF6384',
-                tension: 0.4,
-                yAxisID: 'y1'
+            options: {
+                responsive: true,
+                interaction: { mode: 'index', intersect: false },
+                stacked: false,
+                plugins: {
+                    legend: { position: 'top' },
+                    title: { display: true, text: 'Tendances financières' }
+                },
+                scales: {
+                    y: {
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        title: { display: true, text: 'Revenus' }
+                    },
+                    y1: {
+                        type: 'linear',
+                        display: true,
+                        position: 'right',
+                        grid: { drawOnChartArea: false },
+                        title: { display: true, text: 'Dépenses' }
+                    }
+                }
             }
-        ]
-    },
-    options: {
-        responsive: true,
-        interaction: { mode: 'index', intersect: false },
-        stacked: false,
-        plugins: {
-            legend: { position: 'top' },
-            title: { display: true, text: 'Tendances financières' }
-        },
-        scales: {
-            y: {
-                type: 'linear',
-                display: true,
-                position: 'left',
-                title: { display: true, text: 'Revenus' }
-            },
-            y1: {
-                type: 'linear',
-                display: true,
-                position: 'right',
-                grid: { drawOnChartArea: false },
-                title: { display: true, text: 'Dépenses' }
-            }
-        }
-    }
-};
+        };
 
-        myChart = new Chart(chartCtx, config);
-    }
+            myChart = new Chart(chartCtx, config);
+        }
 
     /**
      * Met à jour toutes les composantes de l'interface.
