@@ -69,6 +69,24 @@ document.addEventListener('DOMContentLoaded', function() {
         monthlyExpensesSpan.textContent = mensuel.depenses.toFixed(2);
     }
 
+    let dernierMois = localStorage.getItem('dernierMois') || new Date().getMonth();
+
+    /**
+     *  Si le mois a changé, réinitialise les transactions et met à jour l'affichage.
+     * @function verifierChangementDeMois
+     */
+    function verifierChangementDeMois() {
+        const moisActuel = new Date().getMonth();
+        if (moisActuel != dernierMois) {
+            transactions = [];
+            localStorage.setItem('transactions', JSON.stringify(transactions));
+            dernierMois = moisActuel;
+            localStorage.setItem('dernierMois', dernierMois);
+            afficherFeedback('Nouveau mois : transactions réinitialisées', 'success');
+            mettreAJourTout();
+        }
+    }
+
     /**
      * Génère l'affichage des transactions.
      * @function afficherTransactions
@@ -224,6 +242,7 @@ document.addEventListener('DOMContentLoaded', function() {
      * @function mettreAJourTout
      */
     function mettreAJourTout() {
+        verifierChangementDeMois();
         mettreAJourSolde();
         mettreAJourReacapitulatifMensuel();
         afficherTransactions();
