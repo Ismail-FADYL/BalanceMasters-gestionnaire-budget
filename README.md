@@ -23,3 +23,8 @@ Ce projet est une application web interactive qui permet à chaque utilisateur d
 3. **Ouvrez** le fichier `Menu principal.html` dans votre navigateur web (double-cliquez ou clic droit > Ouvrir avec).
 4. Suivez les instructions à l’écran pour vous inscrire, vous connecter ou accéder en mode invité.
 5. Commencez à ajouter vos transactions et explorez les différentes fonctionnalités de l’application.
+
+
+### Veuillez trouver ci-dessous le lien vers la capture vidéo du projet.
+
+[Accéder à la capture vidéo sur Google Drive](https://drive.google.com/file/d/1uldQv5wyEYPcOqLtioJJ6oZ4HUnFkM_r/view?usp=sharing)
