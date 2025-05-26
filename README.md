@@ -6,14 +6,14 @@ Ce projet est une application web interactive conçue pour aider les utilisateur
 
 ⚙️ Fonctionnalités
 
-. 🔐 Authentification complète : inscription, connexion ou accès en tant qu’invité.
-. ➕ Ajout, modification et suppression de transactions (revenus et dépenses).
-. 🧾 Saisie des transactions avec montant, catégorie et date.
-. 💹 Calcul et mise à jour automatique du solde.
-. 📊 Graphique interactif affichant l’évolution des revenus et des dépenses dans le temps.
-. 📅 Vue mensuelle des transactions avec récapitulatif (revenus et dépenses).
-. 🧠 Validation intelligente des entrées pour éviter les erreurs de saisie.
-. 💾 Sauvegarde locale des données via localStorage pour une utilisation hors ligne.
+🔐 Authentification complète : inscription, connexion ou accès en tant qu’invité.
+➕ Ajout, modification et suppression de transactions (revenus et dépenses).
+🧾 Saisie des transactions avec montant, catégorie et date.
+💹 Calcul et mise à jour automatique du solde.
+📊 Graphique interactif affichant l’évolution des revenus et des dépenses dans le temps.
+📅 Vue mensuelle des transactions avec récapitulatif (revenus et dépenses).
+🧠 Validation intelligente des entrées pour éviter les erreurs de saisie.
+💾 Sauvegarde locale des données via localStorage pour une utilisation hors ligne.
 
 🚀 Comment démarrer le projet
 
