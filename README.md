@@ -1,4 +1,4 @@
-## 💰 Gestionnaire de Budget Personnel
+# 💰 Gestionnaire de Budget Personnel
 
 ## 📝 Description
 
