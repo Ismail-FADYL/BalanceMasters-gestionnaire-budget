@@ -18,7 +18,7 @@ Ce projet est une application web interactive qui permet à chaque utilisateur d
 
 ## Comment lancer ce projet
 
-    1. **Télécharge** ou **clone** ce dépôt sur ton ordinateur.
+    1. **Télécharge** ou **clone** ce dépôt sur votre ordinateur.
     2. Place tous les fichiers du projet (`Menu principal.html`, `Home.html`, `HomeCSS.css`, `HomeJS.js`, etc.) dans le même dossier.
     3. **Ouvre** le fichier `Menu principal.html` dans ton navigateur web (double-clique ou clic droit > Ouvrir avec).
     4. Suis les instructions à l’écran pour t’inscrire, te connecter ou accéder en mode invité.
