@@ -2,37 +2,32 @@
 
 📝 Description
 
-Ce projet est une application web interactive conçue pour aider les utilisateurs à gérer facilement leur budget personnel. Elle offre une interface intuitive pour ajouter, suivre et analyser les revenus et les dépenses. Les données sont stockées localement dans le navigateur pour garantir confidentialité, sécurité et rapidité d’accès, sans nécessiter de base de données externe.
+Ce projet est une application web interactive qui permet à chaque utilisateur de gérer son budget personnel de manière simple et efficace. L’application offre une interface conviviale pour suivre les revenus et les dépenses, visualiser les tendances financières et obtenir des rapports mensuels détaillés. Toutes les données sont stockées localement dans le navigateur, ce qui garantit la confidentialité et la rapidité d’accès.
 
 ⚙️ Fonctionnalités
 
-🔐 Authentification complète : inscription, connexion ou accès en tant qu’invité.
-➕ Ajout, modification et suppression de transactions (revenus et dépenses).
-🧾 Saisie des transactions avec montant, catégorie et date.
-💹 Calcul et mise à jour automatique du solde.
-📊 Graphique interactif affichant l’évolution des revenus et des dépenses dans le temps.
-📅 Vue mensuelle des transactions avec récapitulatif (revenus et dépenses).
-🧠 Validation intelligente des entrées pour éviter les erreurs de saisie.
-💾 Sauvegarde locale des données via localStorage pour une utilisation hors ligne.
+- **Authentification** : inscription, connexion ou accès en mode invité.
+- **Ajout, modification et suppression de transactions** (revenus ou dépenses).
+- **Saisie des transactions** avec montant, catégorie et date.
+- **Calcul automatique du solde** et affichage en temps réel.
+- **Affichage d’un graphique interactif** (évolution des revenus/dépenses).
+- **Récapitulatif mensuel** des revenus et dépenses.
+- **Historique complet** des transactions.
+- **Validation des entrées** pour éviter les erreurs de saisie.
+- **Sauvegarde locale** des données via `localStorage`.
 
-🚀 Comment démarrer le projet
+🚀 Comment lancer ce projet
 
-1. Télécharger ou cloner ce dépôt GitHub.
-2. Placer tous les fichiers du projet (ex. Menu principal.html, Home.html, HomeCSS.css, HomeJS.js, etc.) dans un même dossier.
-3. Ouvrir le fichier Menu principal.html dans votre navigateur (clic droit > ouvrir avec > navigateur).
-4.  Sélectionner un mode d’accès : s’inscrire, se connecter ou utiliser le mode invité.
-5. Commencer à ajouter vos transactions et à consulter vos statistiques budgétaires.
-
-📽️ Vidéo de démonstration
-
-Vous pouvez visualiser une démonstration complète de l'application via le lien ci-dessous :
-🔗 [Voir la capture vidéo sur Google Drive](https://drive.google.com/file/d/1N95lZiT4UzRI6ScV-_I29YBPLgedvPsn/view?usp=drive_link).
+1. **Téléchargez** ou **clonez** ce dépôt sur votre ordinateur.
+2. Placez tous les fichiers du projet (`Menu principal.html`, `Home.html`, `HomeCSS.css`, `HomeJS.js`, etc.) dans le même dossier.
+3. **Ouvrez** le fichier `Menu principal.html` dans votre navigateur web (double-cliquez ou clic droit > Ouvrir avec).
+4. Suivez les instructions à l’écran pour vous inscrire, vous connecter ou accéder en mode invité.
+5. Commencez à ajouter vos transactions et explorez les différentes fonctionnalités de l’application.
 
 
-🛠️ Technologies utilisées
-. HTML5 / CSS3 / JavaScript
-. Chart.js pour les graphiques interactifs
-. localStorage API pour la persistance des données
+## Veuillez trouver ci-dessous le lien vers la capture vidéo du projet.
+
+[Accéder à la capture vidéo sur Google Drive](https://drive.google.com/file/d/1N95lZiT4UzRI6ScV-_I29YBPLgedvPsn/view?usp=drive_link).
 
 🙌 Remarques
 Ce projet a été réalisé à des fins éducatives. Toute contribution ou suggestion d’amélioration est la bienvenue !
