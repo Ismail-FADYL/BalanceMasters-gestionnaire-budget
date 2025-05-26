@@ -1,10 +1,10 @@
-##💰 Gestionnaire de Budget Personnel
+💰 Gestionnaire de Budget Personnel
 
-##📝 Description
+📝 Description
 
 Ce projet est une application web interactive qui permet à chaque utilisateur de gérer son budget personnel de manière simple et efficace. L’application offre une interface conviviale pour suivre les revenus et les dépenses, visualiser les tendances financières et obtenir des rapports mensuels détaillés. Toutes les données sont stockées localement dans le navigateur, ce qui garantit la confidentialité et la rapidité d’accès.
 
-##⚙️ Fonctionnalités
+⚙️ Fonctionnalités
 
 - **Authentification** : inscription, connexion ou accès en mode invité.
 - **Ajout, modification et suppression de transactions** (revenus ou dépenses).
@@ -16,7 +16,7 @@ Ce projet est une application web interactive qui permet à chaque utilisateur d
 - **Validation des entrées** pour éviter les erreurs de saisie.
 - **Sauvegarde locale** des données via `localStorage`.
 
-##🚀 Comment lancer ce projet
+🚀 Comment lancer ce projet
 
 1. **Téléchargez** ou **clonez** ce dépôt sur votre ordinateur.
 2. Placez tous les fichiers du projet (`Menu principal.html`, `Home.html`, `HomeCSS.css`, `HomeJS.js`, etc.) dans le même dossier.
