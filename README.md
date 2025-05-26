@@ -26,7 +26,8 @@ Ce projet est une application web interactive conçue pour aider les utilisateur
 📽️ Vidéo de démonstration
 
 Vous pouvez visualiser une démonstration complète de l'application via le lien ci-dessous :
-🔗 Voir la capture vidéo sur Google Drive
+🔗 [Voir la capture vidéo sur Google Drive](https://drive.google.com/file/d/1N95lZiT4UzRI6ScV-_I29YBPLgedvPsn/view?usp=drive_link).
+
 
 🛠️ Technologies utilisées
 . HTML5 / CSS3 / JavaScript
