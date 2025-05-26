@@ -25,6 +25,6 @@ Ce projet est une application web interactive qui permet à chaque utilisateur d
 5. Commencez à ajouter vos transactions et explorez les différentes fonctionnalités de l’application.
 
 
-### Veuillez trouver ci-dessous le lien vers la capture vidéo du projet.
+## Veuillez trouver ci-dessous le lien vers la capture vidéo du projet.
 
 [Accéder à la capture vidéo sur Google Drive](https://drive.google.com/file/d/1uldQv5wyEYPcOqLtioJJ6oZ4HUnFkM_r/view?usp=sharing)
