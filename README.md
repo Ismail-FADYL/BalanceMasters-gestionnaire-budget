@@ -28,3 +28,6 @@ Ce projet est une application web interactive qui permet à chaque utilisateur d
 ## Veuillez trouver ci-dessous le lien vers la capture vidéo du projet.
 
 [Accéder à la capture vidéo sur Google Drive](https://drive.google.com/file/d/1uldQv5wyEYPcOqLtioJJ6oZ4HUnFkM_r/view?usp=sharing).
+
+## 🙌 Remarques
+Ce projet a été réalisé à des fins éducatives. Toute contribution ou suggestion d’amélioration est la bienvenue !
